@@ -32,10 +32,6 @@ input.addEventListener('input', e => {
   const length = input.value.length;
 
   if (e.inputType === 'deleteContentBackward') return;
-  if (e.inputType === 'deleteContentForward') {
-    e.preventDefault();
-    return;
-  }
 
   if (length == 4 || length == 8) input.value = addChar('.', -1);
   if (length == 12) input.value = addChar('-', -1);
