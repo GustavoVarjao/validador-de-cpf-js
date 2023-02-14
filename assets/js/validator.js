@@ -41,12 +41,11 @@ const validator = () => {
   let cpfNumbers = cpfArray[0];
   //cpfNumbers é a parte dos 9 primeiros dígitos do cpf
 
-  while (control < 12) {
+  for (; control < 12; control++) {
     let digit = 11 - (methods.reduce(cpfNumbers) % 11);
     if (digit > 9) digit = 0;
 
     cpfNumbers += digit;
-    control++;
   }
 
   if (cpfNumbers.substring(9) === cpfArray[1]) {
